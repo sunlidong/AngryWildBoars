@@ -11,7 +11,7 @@ var app = new Koa();
 var web3_sk;
 var Contract_Token;
 
-//测试路由首页
+//测试路由首页1
 router.get('/', async (ctx) => {
     //test
     ctx.body = "router test"
