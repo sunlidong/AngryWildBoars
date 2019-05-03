@@ -10,8 +10,7 @@ const HttpUtils = exports;
 var app = new Koa();
 var web3_sk;
 var Contract_Token;
-
-//测试路由首页1
+//测试路由首页
 router.get('/', async (ctx) => {
     //test
     ctx.body = "router test"
@@ -774,7 +773,7 @@ router.post('/getTokenRank', async (ctx) => {
     let accoutdata = await Controller.getTokenRank(resposeData);
     ctx.body = accoutdata;
 });
-
+// getThreeData
 
 //three
 /*      three data . DRC代币 (单) 时间
@@ -813,12 +812,10 @@ router.post('/getThreeData', async (ctx) => {
     ctx.body = accoutdata;
 });
 
-//Poller
+//Poller func
 router.post('/Pollerdata', async (ctx) => {
     //
     let res = ctx.request.body;
-    // console.log("1111123232323232");
-    // ctx.body = "1212";
     //qingqiu
     let resposeData = {
         myAcount: "0x38a8DC14edE1DEf9C437bB3647445eEec06fF105",
@@ -836,11 +833,11 @@ router.post('/Pollerdata', async (ctx) => {
 });
 
 
-//chaxun
+//代币监听函数 测试
 router.post('/Pollerdatatest', async (ctx) => {
     //
     let res = ctx.request.body;
-    console.log("1111123232323232");
+    // console.log("1111123232323232");
     // ctx.body = "1212";
     //qingqiu
     let resposeData = {
@@ -2104,6 +2101,7 @@ var Controller = {
         return result;
 
     },
+    //
     PollerDatatest: async (data) => {
         //chaxun
         let result = await Common.getNewBlockDataone(data);
